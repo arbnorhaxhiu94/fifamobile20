@@ -1,0 +1,192 @@
+* {
+	box-sizing: border-box;
+}
+html {
+  font-family: "Lucida Sans", sans-serif;
+  color: white;
+  font-size: 18px;
+}
+body{
+	background-image: url('fifamobile.jpg');
+  	width: 97%;
+  	height: auto;
+}
+
+.header{
+	color:white;
+	box-shadow: 3px 2px 3px rgb(100, 0, 100) ;
+	float: center;
+	text-align: center;
+	border-color:black;
+	background-color:rgb(100, 0, 100);
+	box-shadow: 10px 5px 5px black;
+	opacity: 0.85;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+
+.harta{
+	list-style-type: none;
+	background-color: rgb(100, 0, 100);
+	box-shadow: 10px 5px 5px black; 
+	float: center;
+	opacity: 0.85;
+	text-align: center;
+	border-radius: 10px;
+}
+.harta li{
+	display: inline-flex;
+	color: white;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.harta li a{
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+a:hover{
+	background-color: rgb(50, 0, 50);
+}
+
+
+.container::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.buttons {
+	list-style-type: none;
+	float: left;
+	padding-right: 1%;
+	padding-left: 1%;
+}
+.edit, .reset, .btransferet{
+	opacity: 0.85;
+	background-color: rgb(100, 0, 100);
+	color: white;
+	padding: 5px;
+	cursor: pointer;
+	width: 100%;
+	border-color: rgb(50,0,50);
+	font-size: 16px;
+	box-shadow: 10px 0px 5px black;
+	border-radius: 10px;
+}
+#teams, .etransferet{
+	width: 100%;
+	float: left;
+	background-color: rgb(100, 0, 100);
+	color: white;
+	padding-right: 21%;
+	box-shadow: 10px 5px 5px black;
+	border-radius: 10px;
+}
+
+.divresults{
+	padding-right: 1%;
+	padding-left: 1%;
+	padding-top: 2%;
+}
+.results{
+	text-align: center;
+	background-color: rgb(100, 0, 100);
+	opacity: 0.90;
+	padding: 2%;
+	box-shadow: 10px 5px 5px black;
+	border-radius: 10px;
+}
+.results table{
+	float: center;
+	padding-left: 15%;
+	padding-right: 15%;
+}
+.transfersdiv{
+	padding-right: 1%;
+	padding-left: 1%;
+	padding-top: 2%;
+}
+.transfers{
+	background-color: rgb(100, 0, 100);
+	opacity: 0.95;
+	padding:1%;
+	box-shadow: 10px 5px 5px black;
+	border-radius: 10px;
+}
+h3{
+	background-color: rgb(50,0,50);
+	padding: 2%;
+	border-radius: 5px;
+}
+
+.tabela{
+	background-color: rgb(100, 0, 100);
+	opacity: 0.85;
+	text-align: center;
+	border-color: rgb(50,0,50);
+	box-shadow: 10px 5px 5px black;
+	border-collapse: collapse;
+	border-style: none;
+}
+
+.arbnori1, .arbnori2, .arbnori3, .arbnori4, .arbnori5, .arbnori6, .arbnori7, .arbnori8, .arbnori9,
+.urani1,.urani2,.urani3,.urani4,.urani5,.urani6,.urani7,.urani8,.urani9,
+.ylli1, .ylli2, .ylli3, .ylli4, .ylli5, .ylli6, .ylli7, .ylli8{
+	width: 40px;
+	background-color: rgb(50,0,50);
+	color: white;
+	text-align: center;
+	border-style: none;
+	font-size: 20px;
+}
+#atr1, #atr2, #atr3, #utr1, #utr2, #utr3, #ytr1, #ytr2, #ytr3 {
+	background-color: rgb(50,0,50);
+	border-style: none;
+	font-size: 16px;
+	width: 100%; 
+	color: white;
+	border-radius: 5px;
+}
+
+.atr1, .atr2, .atr3, .utr1, .utr2, .utr3, .ytr1, .ytr2, .ytr3 {
+	margin-top: 2%;
+	background-color: rgb(50, 0, 50);
+	border-radius: 3px;
+	opacity: 1.0;
+}
+
+[class*="col-"] {
+  width: 100%;
+  float: left;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  .harta{
+  	width: 100%;
+  }
+  .edit{
+  	width: 100%;
+  }
+  body{
+  	background-image: url('fifa.jpg');
+  	width: 97%;
+  	height: auto;
+  }
+}
+
+

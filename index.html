@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FIFA</title>
+		<link rel="stylesheet" type="text/css" href="table.css">
+		<script type="text/javascript" src="tabela1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		​<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.teams = false;
+				$scope.ekipet = function() {
+					$scope.teams = !$scope.teams;
+				}
+				$scope.arbnori = "Team A";
+				$scope.urani = "Team B";
+				$scope.ylli = "Team C";
+			});
+
+			$(document).ready(function(){
+    			$(".btransferet").click(function(){
+        			$(".etransferet").slideToggle("slow");
+    			});
+			});
+		</script>
+
+	</head>
+	<body>
+
+		<h1 class="col-12 header"> FIFA </h1>
+			<ul class="col-12 harta">
+				<li><a href="C:\Users\ANA\Desktop\fifa20\index.html">Main</a></li>
+				<li><a href="C:\Users\ANA\Desktop\teams\teams.html">Teams</a></li>
+				<li><a href="C:\Users\ANA\Desktop\table\index.html">Table</a></li>
+				<li><a href="">Trophies</a></li>
+			</ul>
+
+
+		<div ng-app="myApp" ng-controller="myCtrl">
+			<div class="container">
+
+				<div class="col-3 buttons">
+					<ul class="col-3 menu" ></ul>
+						<li>
+							<button class="edit" ng-click="ekipet()">Write Team Names</button>
+							<div id="teams" ng-show="teams" >
+								<ul>
+									<li>Arbnori: <input type="text" ng-model="arbnori" style="width: 170px; color: white; background-color: rgb(50,0,50);border-style: none;font-size: 16px; border-radius: 5px;"></li>
+									<li>Urani: <input type="text" ng-model="urani" style="width: 170px;color: white; background-color: rgb(50,0,50);border-style: none;font-size: 16px;border-radius: 5px;"></li>
+									<li>Ylli: <input type="text" ng-model="ylli" style="width: 170px;color: white; background-color: rgb(50,0,50);border-style: none;font-size: 16px;border-radius: 5px;"></li>
+								</ul>
+							</div>
+						</li>
+						<li><button class="reset" onclick="reset()">Reset Table</button></li>
+						<li>
+							<button class="btransferet">Transfer names</button>
+								<div class="etransferet" style="display: none;">
+									<form id="transferet">
+										<ul>
+											<li>{{arbnori}}</li>
+												<ul>
+													<li><input type="value" id="atr1" ></li>
+													<li><input type="value" id="atr2" ></li>
+													<li><input type="value" id="atr3" ></li>
+												</ul>
+											<li>{{urani}}</li>
+												<ul>
+													<li><input type="value" id="utr1" ></li>
+													<li><input type="value" id="utr2" ></li>
+													<li><input type="value" id="utr3" ></li>
+												</ul>
+											<li>{{ylli}}</li>
+												<ul>
+													<li><input type="value" id="ytr1" ></li>
+													<li><input type="value" id="ytr2" ></li>
+													<li><input type="value" id="ytr3" ></li>
+												</ul>
+											<li style="list-style-type: none; padding-left: 25%;padding-top: 2%;"><input id="save" type="submit" value="Save names" style="width: 100%; background-color: rgb(50,0,50); border-color: rgb(50,0,50);color: white; border-radius: 5px; "></li>
+										</ul>
+								</form>
+								</div>		
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-6 divresults">
+					<div class="results">
+						<form id="fixtures">
+							<table>
+								<tr>
+									<td style="width: 200px;">{{arbnori}} </td>
+									<td><input class="arbnori1" type="value"></td>
+									<td>-</td>
+									<td><input class="urani1" type="value"></td>
+									<td style="width: 200px;">{{urani}} </td>
+								</tr>
+								<tr>
+									<td> {{arbnori}} </td>
+									<td><input class="arbnori2" type="value"></td>
+									<td>-</td>
+									<td><input class="ylli1" type="value"></td>
+									<td>{{ylli}} </td>
+								</tr>
+								<tr>
+									<td > {{urani}}</td>
+									<td><input class="urani2" type="value"></td>
+									<td>-</td>
+									<td><input class="ylli2" type="value"></td>
+									<td >{{ylli}} </td>
+								</tr>
+								<tr>
+									<td> {{urani}}</td>
+									<td><input class="urani3" type="value"></td>
+									<td>-</td>
+									<td><input class="arbnori3" type="value"></td>
+									<td >{{arbnori}} </td>
+								</tr>
+								<tr>
+									<td>{{ylli}} </td>
+									<td><input class="ylli3" type="value"></td>
+									<td>-</td>
+									<td><input class="arbnori4" type="value"></td>
+									<td >{{arbnori}} </td>
+								</tr>
+								<tr>
+									<td >{{ylli}} </td>
+									<td><input class="ylli4" type="value"></td>
+									<td>-</td>
+									<td><input class="urani4" type="value"></td>
+									<td >{{urani}} </td>
+								</tr>
+								<tr>
+									<td >{{arbnori}} </td>
+									<td><input class="arbnori5" type="value"></td>
+									<td>-</td>
+									<td><input class="urani5" type="value"></td>
+									<td > {{urani}}</td>
+								</tr>
+								<tr>
+									<td >{{arbnori}} </td>
+									<td><input class="arbnori6" type="value"></td>
+									<td>-</td>
+									<td><input class="ylli5" type="value"></td>
+									<td >{{ylli}} </td>
+								</tr>
+								<tr>
+									<td > {{urani}}</td>
+									<td><input class="urani6" type="value"></td>
+									<td>-</td>
+									<td><input class="ylli6" type="value"></td>
+									<td >{{ylli}} </td>
+								</tr>
+								<tr>
+									<td >{{urani}} </td>
+									<td><input class="urani7" type="value"></td>
+									<td>-</td>
+									<td><input class="arbnori7" type="value"></td>
+									<td >{{arbnori}} </td>
+								</tr>
+								<tr>
+									<td >{{ylli}} </td>
+									<td><input class="ylli7" type="value"></td>
+									<td>-</td>
+									<td><input class="arbnori8" type="value"></td>
+									<td >{{arbnori}} </td>
+								</tr>
+								<tr>
+									<td >{{ylli}} </td>
+									<td><input class="ylli8" type="value"></td>
+									<td>-</td>
+									<td><input class="urani8" type="value"></td>
+									<td >{{urani}} </td>
+								</tr>
+								<tr>
+									<td >{{arbnori}} </td>
+									<td><input class="arbnori9" type="value"></td>
+									<td>-</td>
+									<td><input class="urani9" type="value"></td>
+									<td >{{urani}} </td>
+								</tr>
+
+							</table>
+							<input id="submit" type="submit" value="Update table" 
+							style="width:100%;
+								background-color: rgb(50,0,50); border-radius: 5px;
+								color: white; padding: 5px; cursor: pointer; border-color: rgb(50,0,50);">
+						</form>
+					</div>
+				</div>
+
+				<div class="col-3 transfersdiv">
+					<div class="transfers">
+						<h3>Transfers</h3>
+						<ul>
+							<li>{{arbnori}}:</li>
+								<ol>
+									<li class="atr1"></li>
+									<li class="atr2"></li>
+									<li class="atr3"></li>
+								</ol></br>
+							<li>{{urani}}:</li>
+								<ol>
+									<li class="utr1"></li>
+									<li class="utr2"></li>
+									<li class="utr3"></li>
+								</ol></br>
+							<li>{{ylli}}:</li>
+								<ol>
+									<li class="ytr1"></li>
+									<li class="ytr2"></li>
+									<li class="ytr3"></li>
+								</ol>
+						</ul>				
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-12" style="padding-top: 3%; padding-bottom: 3%;">
+				<table class="col-12 tabela" border="1px" style="flex: center;">
+					<tr>
+						<td class="titulli" colspan="10" style="font-size: 20px; padding: 1%;"><b> Week Table<b> </td>
+					</tr>
+					<tr>
+						<td style="width: 2%;">Rank</td>
+						<td class="kolonaT" > Team </td>
+						<td class="kolonaM" style="width: 13%;"> Matches Played </td>
+						<td class="kolona"> W </td> 
+						<td class="kolona"> D </td> 
+						<td class="kolona"> L </td>
+						<td class="kolona" style="width: 10%;"> Points </td>
+						<td class="kolona" style="width: 8%;"> GS </td>
+						<td class="kolona" style="width: 8%;"> GC </td> 
+						<td class="kolona" style="width: 8%;"> GD </td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td style="width: 25%px;"> {{arbnori}} </td>
+						<td id="amp"></td>
+						<td id="aw"></td>
+						<td id="ad"></td>
+						<td id="al"></td>
+						<td id="apoints"></td>
+						<td id="ags"></td>
+						<td id="agc"></td>
+						<td id="agd"></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td style="width: 25%;"> {{ylli}} </td>
+						<td id="ymp"></td>
+						<td id="yw"></td>
+						<td id="yd"></td>
+						<td id="yl"></td>
+						<td id="ypoints"></td>
+						<td id="ygs"></td>
+						<td id="ygc"></td>
+						<td id="ygd"></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td style="width: 25%;"> {{urani}} </td>
+						<td id="ump"></td>
+						<td id="uw"></td>
+						<td id="ud"></td>
+						<td id="ul"></td>
+						<td id="upoints"></td>
+						<td id="ugs"></td>
+						<td id="ugc"></td>
+						<td id="ugd"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+</body>
+</html>
